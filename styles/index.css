@@ -6,7 +6,7 @@
   --gutter: 30px;
   --side-small: 20;
   --side-big: 30;
-  --depth: 4600px;
+  --depth: 4900px;
   --transition: .75s cubic-bezier(.07, .59, 0, 1.01);
 }
 
@@ -19,7 +19,6 @@
   line-height: 1.55;
   height: var(--depth);
 }
-
 
 .page__content {
   width: 100%;

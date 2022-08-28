@@ -4,7 +4,7 @@ const audio = document.querySelector('.audio');
 
 //3D scroll
 let zSpacing = -1200; //расстояние по оси Z между элементами
-let lastPosition = zSpacing / 2; //
+let lastPosition = zSpacing / 4; //
 let zVals = []; //значения по оси Z
 
 window.onscroll = function() {
@@ -15,10 +15,11 @@ window.onscroll = function() {
   frames.forEach((element, i) => {
     zVals.push((i * zSpacing) + zSpacing);
     zVals[i] += delta * -3.3;
+
     let frame = element;
     let transform = `translateZ(${Math.round(zVals[i])}px)`;
     let opacity = zVals[i] < Math.abs(zSpacing) ? 1 : 0;
-    frame.setAttribute('style', `transform: ${transform}; opacity: ${opacity}`)
+    frame.setAttribute('style', `transform: ${transform}; opacity: ${opacity}`);
   });
 }
 
