@@ -116,3 +116,26 @@
   font-size: var(--index) * 8;
   font-weight: 200;
 }
+
+.btn-sound {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  background-image: url(../images/sound.gif);
+  background-position: center;
+  background-size: cover;
+  background-color: inherit;
+  width: 24px;
+  height: 24px;
+  border: none;
+  z-index: 1000;
+  transform: opacity .75s ease;
+}
+
+.btn-sound:hover {
+  cursor: pointer;
+}
+
+.paused {
+  opacity: .25;
+}

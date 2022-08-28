@@ -1,5 +1,8 @@
 const frames = Array.from(document.querySelectorAll('.frame'));
+const soundBtn = document.querySelector('.btn-sound');
+const audio = document.querySelector('.audio');
 
+//3D scroll
 let zSpacing = -1000; //расстояние по оси Z между элементами
 let lastPosition = zSpacing / 5; //
 let zVals = []; //значения по оси Z
@@ -20,3 +23,17 @@ window.onscroll = function() {
 }
 
 window.scrollTo(0, 1);
+
+//audio
+soundBtn.addEventListener('click', () => {
+  soundBtn.classList.toggle('paused');
+  audio.paused ? audio.play() : audio.pause();
+});
+
+window.onfocus = function() {
+  soundBtn.classList.contains('paused') ? audio.pause() : audio.play();
+};
+
+window.onblur = function() {
+  audio.pause();
+};
