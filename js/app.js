@@ -3,8 +3,8 @@ const soundBtn = document.querySelector('.btn-sound');
 const audio = document.querySelector('.audio');
 
 //3D scroll
-let zSpacing = -1000; //расстояние по оси Z между элементами
-let lastPosition = zSpacing / 5; //
+let zSpacing = -1200; //расстояние по оси Z между элементами
+let lastPosition = zSpacing / 2; //
 let zVals = []; //значения по оси Z
 
 window.onscroll = function() {
@@ -13,11 +13,11 @@ window.onscroll = function() {
   lastPosition = top;
 
   frames.forEach((element, i) => {
-    zVals.push((i * zSpacing) + zSpacing)
-    zVals[i] += delta * -2;
+    zVals.push((i * zSpacing) + zSpacing);
+    zVals[i] += delta * -3.3;
     let frame = element;
     let transform = `translateZ(${Math.round(zVals[i])}px)`;
-    let opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;
+    let opacity = zVals[i] < Math.abs(zSpacing) ? 1 : 0;
     frame.setAttribute('style', `transform: ${transform}; opacity: ${opacity}`)
   });
 }

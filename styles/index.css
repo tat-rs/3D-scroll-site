@@ -4,9 +4,9 @@
 :root {
   --index: calc(1vw + 1vh);
   --gutter: 30px;
-  --side-small: 26;
-  --side-big: 36;
-  --depth: 8000px;
+  --side-small: 20;
+  --side-big: 30;
+  --depth: 4600px;
   --transition: .75s cubic-bezier(.07, .59, 0, 1.01);
 }
 
@@ -16,7 +16,7 @@
   font-size: calc(var(--index) * 1);
   font-family: raleway_c, sans-serif;
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.55;
   height: var(--depth);
 }
 
@@ -29,6 +29,7 @@
 }
 
 .gallery {
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   height: 100%;
 }
@@ -45,10 +46,11 @@
   will-change: transform;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  z-index: 500;
 }
 
-.frame:nth-child(n+3) {
-  background-color: rgba(0, 0, 0, .5);
+.frame_bgc {
+  background-color: rgba(0, 0, 0, .7);
 }
 
 .frame__content {
@@ -85,10 +87,11 @@
 }
 
 .frame__title {
+  margin: 0;
   font-weight: 100;
   text-transform: uppercase;
   text-align: center;
-  font-size: var(--index) * 8;
+  font-size: calc(var(--index) * 1.5);
   width: min-content;
 }
 
@@ -98,16 +101,16 @@
 }
 
 .frame__subtitle {
-  margin: 0;
+  margin: 0 0 15px;
   text-transform: uppercase;
-  font-size: var(--index) * 6;
+  font-size: calc(var(--index) * 1.3);
   font-weight: 200;
   width: min-content;
 }
 
 .frame__desc {
   margin: 0;
-  font-size: var(--index) * 3.3;
+  font-size: calc(var(--index) * .8);
 }
 
 .frame__author {
